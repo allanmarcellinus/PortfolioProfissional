@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Portfólio de Allan: Professor de Desenvolvimento de Sistemas, Ciência de Dados e Matemática.">
+
+    <title>Portfólio Prof. Allan | Desenvolvimento de Sistemas, Matemática & Ciência de Dados</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+        --ink: #142337;
+        --muted: #65748a;
+        --line: #e5eaf0;
+        --blue: #4068ef;
+        --teal: #1baf9f;
+        --white: #ffffff;
+        --shadow: 0 18px 54px rgba(30, 55, 95, 0.07);
+        }
+
+        * {
+        box-sizing: border-box;
+        }
+
+        html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 95px;
+        }
+
+        body {
+        margin: 0;
+        background: #ffffff;
+        color: var(--ink);
+        font: 16px/1.65 'DM Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+        color: inherit;
+        text-decoration: none;
+        }
+
+        button {
+        font: inherit;
+        }
+
+        ::selection {
+        background: #d8e4ff;
+        }
+
+        .container {
+        width: min(1160px, calc(100% - 48px));
+        margin-inline: auto;
+        }
+
+        .eyebrow {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        color: #4162c4;
+        font-size: 0.77rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+        content: '';
+        width: 19px;
+        height: 2px;
+        background: #4773ef;
+        }
+
+        h1, h2, h3, p {
+        margin-top: 0;
+        }
+
+        h1, h2, h3, .brand {
+        font-family: 'Manrope', sans-serif;
+        }
+
+        h1 {
+        font-size: clamp(3rem, 6vw, 5.6rem);
+        font-weight: 800;
+        letter-spacing: -0.077em;
+        line-height: 1.10;
+        margin: 22px 0 24px;
+        }
+
+        h2 {
+        font-size: clamp(2rem, 3.8vw, 3.1rem);
+        font-weight: 800;
+        letter-spacing: -0.06em;
+        line-height: 1.19;
+        margin: 14px 0 16px;
+        }
+
+        h3 {
+        font-size: 1.2rem;
+        letter-spacing: -0.035em;
+        line-height: 1.3;
+        }
+
+        p {
+        color: var(--muted);
+        }
+
+        .highlight {
+        color: var(--blue);
+        }
+
+        /* MENU */
+
+        .site-header {
+        position: sticky;
+        z-index: 100;
+        top: 0;
+        background: rgba(255, 255, 255, 0.91);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(229, 234, 240, 0.75);
+        }
+
+        .nav {
+        min-height: 77px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        }
+
+        .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.15rem;
+        font-weight: 800;
+        letter-spacing: -0.055em;
+        white-space: nowrap;
+        }
+
+        .brand-icon {
+        display: grid;
+        place-items: center;
+        width: 120px;
+        height: 38px;
+        border-radius: 12px;
+        color: #ffffff;
+        background: var(--ink);
+        font-weight: 800;
+        }
+
+        .brand .dot {
+        color: var(--blue);
+        }
+
+        .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 31px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        }
+
+        .nav-links a:not(.nav-cta) {
+        color: #59697f;
+        transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+        color: var(--blue);
+        }
+
+        .nav-cta {
+        border: 1px solid #dce4f2;
+        padding: 10px 17px;
+        border-radius: 12px;
+        }
+
+        /* .menu-toggle {
+        display: none;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: white;
+        padding: 8px 12px;
+        cursor: pointer;
+        } */
+
+        /* APRESENTAÇÃO */
+
+        .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0 108px;
+        }
+
+        .hero::before {
+        content: '';
+        position: absolute;
+        width: 530px;
+        height: 530px;
+        top: -285px;
+        right: -200px;
+        background: radial-gradient(
+            circle,
+            #e8efff 0%,
+            rgba(232, 239, 255, 0) 70%
+        );
+        pointer-events: none;
+        }
+
+        .hero-grid {
+        display: grid;
+        grid-template-columns: 1.06fr 0.94fr;
+        align-items: center;
+        gap: 65px;
+        }
+
+        .availability {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        background: #effaf7;
+        color: #18836f;
+        border: 1px solid #d5efe8;
+        border-radius: 100px;
+        font-size: 0.8rem;
+        font-weight: 800;
+        padding: 8px 14px;
+        }
+
+        .availability i {
+        width: 8px;
+        height: 8px;
+        display: block;
+        border-radius: 50%;
+        background: #23b894;
+        box-shadow: 0 0 0 4px #d7f5e8;
+        }
+
+        .hero-desc {
+        font-size: 1.08rem;
+        max-width: 565px;
+        line-height: 1.85;
+        }
+
+        .buttons {
+        display: flex;
+        gap: 13px;
+        flex-wrap: wrap;
+        margin-top: 33px;
+        }
+
+        .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 13px;
+        padding: 14px 23px;
+        font-size: 0.9rem;
+        font-weight: 800;
+        border: 1px solid transparent;
+        transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(39, 78, 139, 0.12);
+        }
+
+        .button.primary {
+        background: var(--ink);
+        color: #ffffff;
+        }
+
+        .button.secondary {
+        background: #ffffff;
+        border-color: #dce4ec;
+        color: var(--ink);
+        }
+
+        .hero-micro {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        color: #8490a0;
+        font-size: 0.83rem;
+        }
+
+        .hero-micro svg {
+        color: var(--teal);
+        }
+
+        /* ILUSTRAÇÃO DE PROGRAMAÇÃO */
+
+        .visual {
+        min-height: 490px;
+        position: relative;
+        display: grid;
+        place-items: center;
+        }
+
+        .visual-halo {
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        background: linear-gradient(
+            135deg,
+            #edf3ff,
+            #f7fbff 50%,
+            #e9faf6
+        );
+        }
+
+        .visual-halo::after {
+        content: '';
+        position: absolute;
+        inset: 38px;
+        border-radius: 50%;
+        border: 1px dashed #cbd8ea;
+        }
+
+        .code-card {
+        z-index: 2;
+        position: relative;
+        width: min(100%, 420px);
+        background: #142238;
+        color: #e3ecfb;
+        border-radius: 21px;
+        padding: 0 0 24px;
+        box-shadow: 0 30px 65px rgba(28, 49, 79, 0.21);
+        transform: rotate(-3deg);
+        }
+
+        .card-top {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        height: 48px;
+        padding: 0 19px;
+        border-bottom: 1px solid #304257;
+        }
+
+        .card-top .circle {
+        height: 9px;
+        width: 9px;
+        border-radius: 50%;
+        background: #fc7f77;
+        }
+
+        .card-top .circle:nth-child(2) {
+        background: #f7bf69;
+        }
+
+        .card-top .circle:nth-child(3) {
+        background: #63caa8;
+        }
+
+        .card-top span:last-child {
+        margin-left: auto;
+        font-size: 0.72rem;
+        color: #9fb1c6;
+        }
+
+        .code {
+        padding: 23px 24px 4px;
+        font: 14px/2 Consolas, monospace;
+        white-space: pre-wrap;
+        }
+
+        .code .purple { color: #c9b0ff; }
+        .code .yellow { color: #f6d394; }
+        .code .green { color: #78e1ba; }
+        .code .blue { color: #8cc7ff; }
+        .code .comment { color: #7d91a8; }
+
+        .float-card {
+        position: absolute;
+        z-index: 4;
+        padding: 13px 17px;
+        border-radius: 15px;
+        background: #ffffff;
+        border: 1px solid #e6ebf2;
+        box-shadow: var(--shadow);
+        font-size: 0.81rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        }
+
+        .float-card.top {
+        top: 45px;
+        right: -12px;
+        transform: rotate(5deg);
+        }
+
+        .float-card.bottom {
+        bottom: 34px;
+        left: -25px;
+        transform: rotate(4deg);
+        }
+
+        .float-icon {
+        display: grid;
+        place-items: center;
+        width: 31px;
+        height: 31px;
+        background: #f0f3ff;
+        color: var(--blue);
+        border-radius: 9px;
+        font-size: 1.1rem;
+        }
+
+        .float-card.bottom .float-icon {
+        background: #e8faf3;
+        color: #169d7d;
+        }
+
+        /* FORMAÇÃO E ÁREAS */
+
+        .stats {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: #ffffff;
+        }
+
+        .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 28px 0;
+        gap: 24px;
+        }
+
+        .stat {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        }
+
+        .stat svg {
+        color: var(--blue);
+        }
+
+        .stat strong {
+        display: block;
+        font: 800 1rem 'Manrope', sans-serif;
+        letter-spacing: -0.035em;
+        }
+
+        .stat span {
+        color: #8490a0;
+        font-size: 0.82rem;
+        }
+
+        section.content-section {
+        padding: 112px 0;
+        }
+
+        .section-heading {
+        max-width: 700px;
+        margin-bottom: 43px;
+        }
+
+        .section-heading p {
+        font-size: 1.02rem;
+        }
+
+        /* SOBRE MIM */
+
+        .about-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 75px;
+        align-items: center;
+        }
+
+        .about-art {
+        min-height: 395px;
+        background: #f5f8fd;
+        border: 1px solid #e8eef7;
+        border-radius: 25px;
+        position: relative;
+        overflow: hidden;
+        padding: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .math-symbol {
+        position: absolute;
+        font: 800 2rem 'Manrope', sans-serif;
+        color: #bdc9e2;
+        }
+
+        .math-symbol.s1 {
+        top: 30px;
+        left: 40px;
+        }
+
+        .math-symbol.s2 {
+        bottom: 28px;
+        right: 36px;
+        color: #9acdc7;
+        }
+
+        .math-symbol.s3 {
+        top: 43px;
+        right: 55px;
+        font-size: 1.4rem;
+        color: #a3b6db;
+        }
+
+        .diagram {
+        background: #ffffff;
+        border: 1px solid #e4eaf4;
+        padding: 30px 33px;
+        border-radius: 21px;
+        box-shadow: 0 18px 39px rgba(50, 79, 126, 0.07);
+        transform: rotate(-5deg);
+        }
+
+        .diagram .formula {
+        font: 800 clamp(1.55rem, 3vw, 2.5rem) 'Manrope', sans-serif;
+        letter-spacing: -0.06em;
+        white-space: nowrap;
+        }
+
+        .diagram .formula span {
+        color: var(--blue);
+        }
+
+        .diagram p {
+        font-size: 0.78rem;
+        margin: 10px 0 0;
+        }
+
+        .about-copy p {
+        font-size: 1.02rem;
+        line-height: 1.9;
+        }
+
+        .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 26px;
+        }
+
+        .tag {
+        padding: 8px 13px;
+        background: #f5f8fc;
+        border: 1px solid #e9edf4;
+        border-radius: 9px;
+        color: #53647a;
+        font-size: 0.78rem;
+        font-weight: 800;
+        }
+
+        /* CARDS DE ATUAÇÃO */
+
+        .soft {
+        background: #f8fafd;
+        }
+
+        .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        }
+
+        .card {
+        background: white;
+        padding: 32px 28px;
+        border: 1px solid #e7ecf3;
+        border-radius: 20px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+        }
+
+        .card-icon {
+        display: grid;
+        place-items: center;
+        height: 49px;
+        width: 49px;
+        border-radius: 14px;
+        font-size: 1.5rem;
+        margin-bottom: 23px;
+        background: #ebf0ff;
+        color: #496ceb;
+        }
+
+        .card:nth-child(2) .card-icon {
+        background: #e7f8f3;
+        color: #229e85;
+        }
+
+        .card:nth-child(3) .card-icon {
+        background: #fff4e5;
+        color: #d28f37;
+        }
+
+        .card p {
+        font-size: 0.91rem;
+        line-height: 1.8;
+        margin: 0;
+        }
+
+        /* PROJETOS */
+
+        .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        }
+
+        .project {
+        border: 1px solid #e5eaf1;
+        border-radius: 21px;
+        overflow: hidden;
+        background: #ffffff;
+        transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+        }
+
+        .project-art {
+        height: 185px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        }
+
+        .project-art.p1 {
+        background: linear-gradient(135deg, #e9efff, #d8e4ff);
+        }
+
+        .project-art.p2 {
+        background: linear-gradient(135deg, #e6faf4, #cef1e5);
+        }
+
+        .project-art.p3 {
+        background: linear-gradient(135deg, #fff2e2, #ffe6cb);
+        }
+
+        .mock-window {
+        width: 72%;
+        height: 125px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 15px 30px #2b4c8a1c;
+        padding: 16px;
+        transform: rotate(-5deg) translateY(12px);
+        }
+
+        .mock-window .bar {
+        height: 8px;
+        border-radius: 3px;
+        background: #dbe5f5;
+        margin-bottom: 11px;
+        }
+
+        .mock-window .bar.short {
+        width: 54%;
+        background: #7895e5;
+        }
+
+        .mock-window .bar.mid {
+        width: 76%;
+        }
+
+        .mock-window .columns {
+        display: flex;
+        gap: 8px;
+        margin-top: 14px;
+        }
+
+        .mock-window .columns i {
+        flex: 1;
+        height: 28px;
+        border-radius: 5px;
+        background: #e8eef9;
+        }
+
+        .p2 .mock-window .bar.short {
+        background: #4ebfa4;
+        }
+
+        .p3 .mock-window .bar.short {
+        background: #f1b366;
+        }
+
+        .project-body {
+        padding: 25px;
+        }
+
+        .project-type {
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        color: #5c76ba;
+        text-transform: uppercase;
+        }
+
+        .project-body h3 {
+        margin: 9px 0;
+        }
+
+        .project-body p {
+        font-size: 0.88rem;
+        line-height: 1.8;
+        min-height: 76px;
+        }
+
+        .project-note {
+        font-size: 0.74rem;
+        color: #8795a6;
+        border-top: 1px solid #edf0f4;
+        padding-top: 15px;
+        }
+
+        /* CONTATO */
+
+        .callout {
+        background: #17273b;
+        border-radius: 27px;
+        padding: 66px 70px;
+        position: relative;
+        overflow: hidden;
+        }
+
+        .callout::after {
+        content: '';
+        width: 330px;
+        height: 330px;
+        position: absolute;
+        border-radius: 50%;
+        right: -70px;
+        top: -120px;
+        border: 60px solid rgba(103, 136, 217, 0.13);
+        }
+
+        .callout .eyebrow {
+        color: #92b9ff;
+        }
+
+        .callout h2 {
+        color: white;
+        max-width: 650px;
+        }
+
+        .callout p {
+        color: #b9c7da;
+        max-width: 590px;
+        margin-bottom: 28px;
+        }
+
+        .callout .button {
+        background: #ffffff;
+        color: #17273b;
+        position: relative;
+        z-index: 1;
+        }
+
+        /* RODAPÉ */
+
+        .footer {
+        border-top: 1px solid var(--line);
+        padding: 31px 0;
+        }
+
+        .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        color: #8a97a8;
+        font-size: 0.84rem;
+        }
+
+        .footer-links {
+        display: flex;
+        gap: 20px;
+        }
+
+        .footer-links a:hover {
+        color: var(--blue);
+        }
+
+        /* ANIMAÇÕES */
+
+        .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .reveal.visible {
+        opacity: 1;
+        transform: none;
+        }
+
+        :focus-visible {
+        outline: 3px solid #7596ff;
+        outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+
+        * {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+        }
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 960px) {
+        .hero-grid { gap: 20px; }
+        .visual { min-height: 400px; }
+        .visual-halo { width: 330px; height: 330px; }
+        .code-card { width: 350px; }
+        .float-card.top { right: 0; }
+        .float-card.bottom { left: 0; }
+        .about-grid { gap: 35px; }
+        .cards, .projects { gap: 14px; }
+        .card { padding: 25px 21px; }
+        }
+
+        @media (max-width: 760px) {
+        .container {
+            width: min(100% - 36px, 560px);
+        }
+
+        .nav {
+            min-height: 68px;
+        }
+
+        /* .menu-toggle {
+            display: block;
+        } */
+
+        .nav-links {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 68px;
+            background: white;
+            border-bottom: 1px solid var(--line);
+            display: none;
+            padding: 22px;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 18px;
+            box-shadow: 0 15px 22px #14233712;
+        }
+
+        .nav-links.open {
+            display: flex;
+        }
+
+        .nav-cta {
+            text-align: center;
+        }
+
+        .hero {
+            padding: 40px 0 65px;
+        }
+
+        .hero-grid, .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+        }
+
+        .visual {
+            min-height: 410px;
+        }
+
+        .visual-halo {
+            width: 340px;
+            height: 340px;
+        }
+
+        .code-card {
+            width: min(88%, 380px);
+        }
+
+        .float-card.top {
+            right: -6px;
+            top: 20px;
+        }
+
+        .float-card.bottom {
+            bottom: 20px;
+            left: 0;
+        }
+
+        .stats-grid {
+            grid-template-columns: 1fr;
+            gap: 18px;
+            padding: 25px 0;
+        }
+
+        .stat {
+            justify-content: flex-start;
+            padding-left: 18%;
+        }
+
+        section.content-section {
+            padding: 76px 0;
+        }
+
+        .about-art {
+            min-height: 305px;
+        }
+
+        .cards, .projects {
+            grid-template-columns: 1fr;
+        }
+
+        .project-body p {
+            min-height: 0;
+        }
+
+        .callout {
+            padding: 45px 28px;
+        }
+
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        }
+
+        @media (max-width: 390px) {
+        h1 { font-size: 2.65rem; }
+        .float-card { font-size: 0.7rem; padding: 10px; }
+        .code { font-size: 12px; padding: 14px; }
+        .visual { min-height: 355px; }
+        .visual-halo { width: 275px; height: 275px; }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navegação principal">
+
+        <a class="brand" href="#inicio">
+            <span class="brand-icon">Portfólio</span>
+            Prof. Allan<span class="dot">.</span><span style="color: var(--blue);"><i>(math & dev)</i></span>
+        </a>
+
+        <!-- <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-links"
+            aria-label="Abrir menu"
+        >
+            ☰
+        </button> -->
+
+        <div class="nav-links" id="nav-links">
+            <!-- <a href="#"></a>
+            <a href="#"></a>
+            <a href="#">/a>
+            <a href="#" class="nav-cta"></a> -->
+        </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+
+        <section class="hero" id="inicio">
+        <div class="container hero-grid">
+
+            <div class="hero-copy reveal">
+
+            <span class="availability">
+                <i></i>
+                Apresentação
+            </span>
+
+            <h1>
+                Allan
+                <span class="highlight">Marcelino</span>
+                <br>
+            </h1>
+
+            <p class="hero-desc">
+                Engenheiro de Software, licenciado em Matemática
+                e professor do Ensino Médio Técnico de Desenvolvimento de Sistemas.
+            </p>
+
+            <div class="buttons">
+
+                <a class="button primary" href="#projetos">
+                Projetos ↗
+                </a>
+
+                <!-- <a class="button secondary" href="#projetos"></a> -->
+
+            </div>
+
+            <!-- <div class="hero-micro"></div> -->
+
+            </div>
+
+
+            <div class="visual reveal">
+
+            <div class="visual-halo"></div>
+
+            <div class="code-card">
+
+                <div class="card-top">
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span>educacao.js</span>
+                </div>
+
+                <div class="code"><span class="purple">const</span> <span class="blue">professor</span> = {<br>  nome: <span class="yellow">"Allan"</span>,<br>  areas: [<br>    <span class="green">"Desenvolvimento de Sistemas"</span>,<br>    <span class="green">"Matemática"</span>,<br>    <span class="green">"Ciência de Dados"</span><br>  ],<br>  missao: <span class="yellow">"ensinar"</span><br>};<br><br></div>
+
+            </div>
+
+            <div class="float-card top">
+                <span class="float-icon">∑</span>
+                Matemática
+            </div>
+
+            <div class="float-card bottom">
+                <span class="float-icon">⌘</span>
+                Desenvolvimento de Sistemas
+            </div>
+
+            </div>
+
+        </div>
+        </section>
+
+
+        <!-- <div class="stats">
+        <div class="container stats-grid">
+
+            <div class="stat">
+            <div>
+                <strong>Escola Estadual Profª. Antonieta Borges Alves</strong>
+            </div>
+            </div>
+
+            <div class="stat">
+            <div>
+                <strong>Desenvolvimento de Sistemas</strong>
+            </div>
+            </div>
+
+            <div class="stat">
+            <div>
+                <strong>Educação Profissional Paulista</strong>
+            </div>
+            </div>
+
+        </div>
+        </div> -->
+
+
+        <section class="content-section" id="projetos">
+        <div class="container about-grid">
+
+            <div class="about-art reveal">
+
+            <span class="math-symbol s1">π</span>
+            <span class="math-symbol s2">{ }</span>
+            <span class="math-symbol s3">∑</span>
+
+            <div class="diagram">
+                <div class="formula">
+                ideia <span>+ lógica</span>
+                <br>
+                = impacto<span>.</span>
+                </div>
+
+                <p>Onde a curiosidade encontra a prática.</p>
+            </div>
+
+            </div>
+
+            <div class="about-copy reveal">
+
+            <span class="eyebrow">Projeto Movimentos</span>
+
+            <h2>
+                Movimentos
+                <span class="highlight">2.</span>
+            </h2>
+
+            <p>
+                Acredito que tecnologia e matemática fazem mais
+                sentido quando deixam de ser apenas conceitos e
+                se tornam ferramentas para compreender e
+                transformar o mundo.
+            </p>
+
+            <p>
+                Minha atuação une desenvolvimento de sistemas,
+                raciocínio matemático e educação.
+
+                Gosto de tornar ideias complexas acessíveis,
+                estimular a autonomia e mostrar que aprender
+                pode ser uma experiência criativa.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Engenharia de Software</span>
+                <span class="tag">Matemática</span>
+                <span class="tag">Desenvolvimento Web</span>
+                <span class="tag">Ciência de Dados</span>
+                <span class="tag">Didática</span>
+            </div>
+
+            </div>
+
+        </div>
+        </section>
+
+        <!-- ÁREAS DE ATUAÇÃO -->
+
+        <section class="content-section soft" id="atuacao">
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+            <span class="eyebrow">O que faço</span>
+
+            <h2>Três áreas, um mesmo propósito.</h2>
+
+            <p>
+                Explorar possibilidades, resolver problemas e
+                ajudar outras pessoas a construírem conhecimento.
+            </p>
+
+            </div>
+
+            <div class="cards">
+
+            <article class="card reveal">
+
+                <div class="card-icon">⌘</div>
+
+                <h3>Desenvolvimento de Sistemas</h3>
+
+                <p>
+                Algoritmos, programação, aplicações web e
+                boas práticas para transformar problemas
+                em soluções digitais funcionais.
+                </p>
+
+            </article>
+
+            <article class="card reveal">
+
+                <div class="card-icon">∑</div>
+
+                <h3>Matemática</h3>
+
+                <p>
+                Raciocínio lógico, resolução de problemas
+                e conexões entre a teoria matemática e
+                desafios do cotidiano.
+                </p>
+
+            </article>
+
+            <article class="card reveal">
+
+                <div class="card-icon">◈</div>
+
+                <h3>Ciência de Dados</h3>
+
+                <p>
+                Dados, análise, visualização e pensamento
+                analítico para descobrir padrões e apoiar
+                decisões inteligentes.
+                </p>
+
+            </article>
+
+            </div>
+
+        </div>
+        </section>
+
+        <!-- PROJETOS -->
+
+        <section class="content-section" id="projetos">
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+            <span class="eyebrow">
+                Portfólio em construção
+            </span>
+
+            <h2>Ideias que ganham vida.</h2>
+
+            <p>
+                Conheça alguns dos tipos de projetos que
+                conectam tecnologia, educação e matemática.
+            </p>
+
+            </div>
+
+            <div class="projects">
+
+            <!-- PROJETO 1 -->
+
+            <article class="project reveal">
+
+                <div class="project-art p1">
+                <div class="mock-window">
+                    <div class="bar short"></div>
+                    <div class="bar mid"></div>
+
+                    <div class="columns">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    </div>
+                </div>
+                </div>
+
+                <div class="project-body">
+
+                <span class="project-type">
+                    Exemplo • Desenvolvimento web
+                </span>
+
+                <h3>Aplicação Web</h3>
+
+                <p>
+                    Espaço reservado para apresentar uma
+                    aplicação criada com HTML, CSS,
+                    JavaScript ou frameworks.
+                </p>
+
+                <div class="project-note">
+                    Personalize com seu projeto e link do repositório.
+                </div>
+
+                </div>
+
+            </article>
+
+            <!-- PROJETO 2 -->
+
+            <article class="project reveal">
+
+                <div class="project-art p2">
+                <div class="mock-window">
+                    <div class="bar short"></div>
+                    <div class="bar mid"></div>
+
+                    <div class="columns">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    </div>
+                </div>
+                </div>
+
+                <div class="project-body">
+
+                <span class="project-type">
+                    Exemplo • Educação
+                </span>
+
+                <h3>Recurso Didático</h3>
+
+                <p>
+                    Espaço reservado para uma atividade
+                    interativa, sequência de aulas ou
+                    material digital de aprendizagem.
+                </p>
+
+                <div class="project-note">
+                    Personalize com seu projeto e link do material.
+                </div>
+
+                </div>
+
+            </article>
+
+            <!-- PROJETO 3 -->
+
+            <article class="project reveal">
+
+                <div class="project-art p3">
+                <div class="mock-window">
+                    <div class="bar short"></div>
+                    <div class="bar mid"></div>
+
+                    <div class="columns">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    </div>
+                </div>
+                </div>
+
+                <div class="project-body">
+
+                <span class="project-type">
+                    Exemplo • Dados & Matemática
+                </span>
+
+                <h3>Análise de Dados</h3>
+
+                <p>
+                    Espaço reservado para um painel,
+                    visualização ou estudo exploratório
+                    com dados e matemática.
+                </p>
+
+                <div class="project-note">
+                    Personalize com seu projeto e link do estudo.
+                </div>
+
+                </div>
+
+            </article>
+
+            </div>
+
+        </div>
+        </section>
+
+        <!-- CONTATO -->
+
+        <section
+        class="content-section"
+        id="contato"
+        style="padding-top: 0"
+        >
+
+        <div class="container">
+
+            <div class="callout reveal">
+
+            <span class="eyebrow">
+                Vamos construir algo juntos?
+            </span>
+
+            <h2>
+                Boas ideias começam com uma conversa.
+            </h2>
+
+            <p>
+                Tem um projeto, uma proposta educacional ou
+                quer trocar experiências sobre tecnologia
+                e matemática?
+
+                Entre em contato.
+            </p>
+
+            <a
+                class="button"
+                id="contact-link"
+                href="mailto:seuemail@exemplo.com"
+            >
+                Enviar um e-mail ↗
+            </a>
+
+            </div>
+
+        </div>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+        <span>
+            © <span id="year"></span> Allan.
+            Feito com criatividade, código e café.
+        </span>
+
+        <div class="footer-links">
+
+            <a href="#inicio">
+            Voltar ao topo ↑
+            </a>
+
+            <a
+            id="github-link"
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            GitHub ↗
+            </a>
+
+        </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // CONFIGURAÇÕES DO PORTFÓLIO
+        // Substitua pelos seus dados.
+
+        const configuracao = {
+        email: 'seuemail@exemplo.com',
+        github: 'https://github.com/'
+        };
+
+        // Contatos
+
+        document.getElementById('contact-link').href =
+        'mailto:' + configuracao.email;
+
+        document.getElementById('github-link').href =
+        configuracao.github;
+
+        // Ano automático
+
+        document.getElementById('year').textContent =
+        new Date().getFullYear();
+
+        // Menu responsivo
+
+        // const menuButton = document.querySelector('.menu-toggle');
+        // const menu = document.getElementById('nav-links');
+
+        // menuButton.addEventListener('click', () => {
+
+        // const isOpen = menu.classList.toggle('open');
+
+        // menuButton.setAttribute(
+        //     'aria-expanded',
+        //     String(isOpen)
+        // );
+
+        // menuButton.setAttribute(
+        //     'aria-label',
+        //     isOpen ? 'Fechar menu' : 'Abrir menu'
+        // );
+
+        // menuButton.textContent = isOpen ? '✕' : '☰';
+
+        //});
+
+        // Fechar menu ao clicar nos links
+
+        // menu.querySelectorAll('a').forEach(link => {
+
+        // link.addEventListener('click', () => {
+
+        //     menu.classList.remove('open');
+
+        //     menuButton.setAttribute(
+        //     'aria-expanded',
+        //     'false'
+        //     );
+
+        //     menuButton.setAttribute(
+        //     'aria-label',
+        //     'Abrir menu'
+        //     );
+
+        //     menuButton.textContent = '☰';
+
+        // });
+
+        // });
+
+        // Animação dos elementos ao rolar a página
+
+        if ('IntersectionObserver' in window) {
+
+        const observer = new IntersectionObserver(
+            entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                entry.target.classList.add('visible');
+
+                observer.unobserve(entry.target);
+
+                }
+
+            });
+
+            },
+            {
+            threshold: 0.08
+            }
+        );
+
+        document.querySelectorAll('.reveal').forEach(
+            element => observer.observe(element)
+        );
+
+        } else {
+
+        document.querySelectorAll('.reveal').forEach(
+            element => element.classList.add('visible')
+        );
+
+        }
+
+    </script>
+
+</body>
+</html>
